@@ -1,0 +1,25 @@
+{
+  "name": "radix-tailwind-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test()"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabeabreu/radix-tailwind-components.git"
+  },
+  "keywords": [
+    "tailwind",
+    "tailwindui",
+    "radix",
+    "components"
+  ],
+  "author": "gabeabreu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabeabreu/radix-tailwind-components/issues"
+  },
+  "homepage": "https://github.com/gabeabreu/radix-tailwind-components#readme"
+}
