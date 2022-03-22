@@ -26,11 +26,11 @@ interface AccordionItem {
   content: string;
 }
 
-interface Items {
+interface AccordionItems {
   items: AccordionItem[]
 }
 
-const Accordion = ({items}: Items) => {
+const Accordion = ({items}: AccordionItems) => {
   return (
     <AccordionPrimitive.Root
       type="single"

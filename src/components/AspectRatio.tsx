@@ -2,12 +2,12 @@ import * as AspectRatioPrimitive from "@radix-ui/react-aspect-ratio";
 import cx from "classnames";
 import React, { Fragment } from "react";
 
-interface Props {
+interface AspectRatioProps {
   text: string,
   imageSource: string
 }
 
-const AspectRatio = ({text, imageSource}: Props) => {
+const AspectRatio = ({text, imageSource}: AspectRatioProps) => {
   return (
     <Fragment>
       <AspectRatioPrimitive.Root

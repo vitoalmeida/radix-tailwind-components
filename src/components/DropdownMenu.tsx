@@ -12,18 +12,18 @@ import cx from "classnames";
 import React, { ReactNode, useState } from "react";
 import Button from "./shared/Button";
 
-interface MenuItem {
+interface DropdownMenuItem {
   label: string;
   shortcut?: string;
   icon?: ReactNode;
 }
 
-interface Props {
+interface DropdownMenuProps {
   trigger: string,
-  items: MenuItem[],
+  items: DropdownMenuItem[],
 }
 
-const DropdownMenu = ({ trigger, items}: Props) => {
+const DropdownMenu = ({ trigger, items}: DropdownMenuProps) => {
 
   return (
     <div className="relative inline-block text-left">

@@ -3,14 +3,14 @@ import cx from "classnames";
 import React from "react";
 
 
-interface Props {
+interface HoverCardProps {
   logoSvgPath: string,
   colorFill: string,
   title: string,
   description: string
 }
 
-const HoverCard = ({ logoSvgPath, colorFill, title, description}: Props) => {
+const HoverCard = ({ logoSvgPath, colorFill, title, description}: HoverCardProps) => {
   
   const Logo = () => (
     <svg

@@ -3,11 +3,11 @@ import * as TogglePrimitive from "@radix-ui/react-toggle";
 import React, { useState } from "react";
 import Button from "./shared/Button";
 
-interface Props {
+interface ToggleProps {
   text: string
 }
 
-const Toggle = ({ text }: Props) => {
+const Toggle = ({ text }: ToggleProps) => {
   const [toggleState, setToggleState] = useState(false);
 
   return (

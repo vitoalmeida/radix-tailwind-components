@@ -4,20 +4,20 @@ import cx from "classnames";
 import React from "react";
 import Button from "./shared/Button";
 
-interface Item {
+interface PopoverItem {
   id?: string,
   label: string,
   defaultValue: string
 }
 
-interface Props {
-  items: Item[],
+interface PopoverProps {
+  items: PopoverItem[],
   trigger: string,
   title: string
 }
 
 
-const Popover = ({items, title, trigger}: Props) => {
+const Popover = ({items, title, trigger}: PopoverProps) => {
   return (
     <div className="relative inline-block text-left">
       <PopoverPrimitive.Root>

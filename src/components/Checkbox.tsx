@@ -4,11 +4,11 @@ import * as LabelPrimitive from "@radix-ui/react-label";
 import cx from "classnames";
 import React from "react";
 
-interface Props {
+interface CheckboxProps {
   text: string
 }
 
-const Checkbox = ({ text }: Props) => {
+const Checkbox = ({ text }: CheckboxProps) => {
   return (
     <form className="flex items-center">
       <CheckboxPrimitive.Root

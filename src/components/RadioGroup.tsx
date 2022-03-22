@@ -1,16 +1,16 @@
 import cx from "classnames";
 import React from "react";
 
-interface Item {
+interface RadioGroupItem {
   id: string,
   title: string
 }
 
-interface Items {
-  items: Item[]
+interface RadioGroupItems {
+  items: RadioGroupItem[]
 }
 
-const RadioGroup = ({ items }: Items) => {
+const RadioGroup = ({ items }: RadioGroupItems) => {
   return (
     <form>
       <fieldset>

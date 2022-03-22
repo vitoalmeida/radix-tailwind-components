@@ -3,12 +3,12 @@ import cx from "classnames";
 import React from "react";
 import Button from "./shared/Button";
 
-interface Props {
+interface TooltipProps {
   trigger: string,
   description: string
 }
 
-const Tooltip = ({ trigger, description }: Props) => {
+const Tooltip = ({ trigger, description }: TooltipProps) => {
   return (
     <TooltipPrimitive.Provider>
       <TooltipPrimitive.Root>

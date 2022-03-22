@@ -5,7 +5,7 @@ import cx from "classnames";
 import React, { Fragment, useState } from "react";
 import Button from "./shared/Button";
 
-interface Props {
+interface DialogProps {
   trigger: string,
   title: string,
   description: string,
@@ -14,7 +14,7 @@ interface Props {
   confirmButtonText: string
 }
 
-const Dialog = ({ trigger, title, description, firstInputText, secondInputText, confirmButtonText }: Props) => {
+const Dialog = ({ trigger, title, description, firstInputText, secondInputText, confirmButtonText }: DialogProps) => {
   let [isOpen, setIsOpen] = useState(false);
 
   return (

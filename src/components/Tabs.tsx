@@ -2,16 +2,16 @@ import * as TabsPrimitive from "@radix-ui/react-tabs";
 import cx from "classnames";
 import React from "react";
 
-interface Tab {
+interface TabsTab {
   title: string;
   value: string;
 }
 
-interface Tabs {
-  tabs: Tab[]
+interface TabsTabs {
+  tabs: TabsTab[]
 }
 
-const Tabs = ({tabs}: Tabs) => {
+const Tabs = ({tabs}: TabsTabs) => {
   return (
     <TabsPrimitive.Root defaultValue="tab1">
       <TabsPrimitive.List

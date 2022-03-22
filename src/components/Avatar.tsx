@@ -8,17 +8,17 @@ enum Variant {
   Rounded,
 }
 
-interface User {
+interface AvatarUser {
   user: string
 }
 
-interface Props {
+interface AvatarProps {
   variant: Variant,
   isOnline?: boolean,
-  users: User[]
+  users: AvatarUser[]
 };
 
-const Avatar = ({ users, variant, isOnline }: Props) => {
+const Avatar = ({ users, variant, isOnline }: AvatarProps) => {
   const urls =Array.from({ length: users.length }, () => "");
 
   return (
