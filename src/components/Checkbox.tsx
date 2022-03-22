@@ -4,9 +4,11 @@ import * as LabelPrimitive from "@radix-ui/react-label";
 import cx from "classnames";
 import React from "react";
 
-interface Props {}
+interface Props {
+  text: string
+}
 
-const Checkbox = (props: Props) => {
+const Checkbox = ({ text }: Props) => {
   return (
     <form className="flex items-center">
       <CheckboxPrimitive.Root
@@ -27,7 +29,7 @@ const Checkbox = (props: Props) => {
         htmlFor="c1"
         className="ml-3 select-none text-sm font-medium text-gray-900 dark:text-gray-100"
       >
-        Accept terms and conditions
+        {text}
       </LabelPrimitive.Label>
     </form>
   );

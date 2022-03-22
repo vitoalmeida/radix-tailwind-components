@@ -1,15 +1,16 @@
 import cx from "classnames";
 import React from "react";
 
-interface Props {}
+interface Item {
+  id: string,
+  title: string
+}
 
-const starters = [
-  { id: "red", title: "Bulbasaur" },
-  { id: "green", title: "Charmader" },
-  { id: "blue", title: "Squirtle" },
-];
+interface Items {
+  items: Item[]
+}
 
-const RadioGroup = (props: Props) => {
+const RadioGroup = ({ items }: Items) => {
   return (
     <form>
       <fieldset>
@@ -17,10 +18,10 @@ const RadioGroup = (props: Props) => {
           Choose your starter
         </legend>
         <div className="mt-3 space-y-3">
-          {starters.map((pokemon) => (
-            <div key={pokemon.id} className="flex items-center">
+          {items.map((item) => (
+            <div key={item.id} className="flex items-center">
               <input
-                id={pokemon.id}
+                id={item.id}
                 name="notification-method"
                 type="radio"
                 className={cx(
@@ -30,10 +31,10 @@ const RadioGroup = (props: Props) => {
                 )}
               />
               <label
-                htmlFor={pokemon.id}
+                htmlFor={item.id}
                 className="ml-2 block text-sm font-medium text-gray-700 dark:text-gray-400"
               >
-                {pokemon.title}
+                {item.title}
               </label>
             </div>
           ))}

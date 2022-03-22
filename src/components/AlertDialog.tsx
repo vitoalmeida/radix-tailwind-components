@@ -4,15 +4,21 @@ import cx from "classnames";
 import React, { Fragment, useState } from "react";
 import Button from "./shared/Button";
 
-interface Props {}
+interface Props {
+  trigger: string,
+  title: string,
+  description: string,
+  cancelButtonText: string,
+  confirmButtonText: string
+}
 
-const AlertDialog = (props: Props) => {
+const AlertDialog = ({trigger, title, description, cancelButtonText, confirmButtonText}: Props) => {
   let [isOpen, setIsOpen] = useState(false);
 
   return (
     <AlertDialogPrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogPrimitive.Trigger asChild>
-        <Button>Click</Button>
+        <Button>{trigger}</Button>
       </AlertDialogPrimitive.Trigger>
       <Transition.Root show={isOpen}>
         <Transition.Child
@@ -49,11 +55,10 @@ const AlertDialog = (props: Props) => {
             )}
           >
             <AlertDialogPrimitive.Title className="text-sm font-medium text-gray-900 dark:text-gray-100">
-              Are you absolutely sure?
+              {title}
             </AlertDialogPrimitive.Title>
             <AlertDialogPrimitive.Description className="mt-2 text-sm font-normal text-gray-700 dark:text-gray-400">
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
+              {description}
             </AlertDialogPrimitive.Description>
             <div className="mt-4 flex justify-end space-x-2">
               <AlertDialogPrimitive.Cancel
@@ -64,7 +69,7 @@ const AlertDialog = (props: Props) => {
                   "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                 )}
               >
-                Cancel
+                {cancelButtonText}
               </AlertDialogPrimitive.Cancel>
               <AlertDialogPrimitive.Action
                 className={cx(
@@ -74,7 +79,7 @@ const AlertDialog = (props: Props) => {
                   "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                 )}
               >
-                Confirm
+                {confirmButtonText}
               </AlertDialogPrimitive.Action>
             </div>
           </AlertDialogPrimitive.Content>

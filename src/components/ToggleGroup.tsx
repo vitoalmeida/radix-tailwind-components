@@ -4,39 +4,24 @@ import {
   UnderlineIcon,
 } from "@radix-ui/react-icons";
 import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
+import { ToggleItem } from "@radix-ui/react-toolbar";
 import cx from "classnames";
 import React, { ReactElement } from "react";
 
 interface ToggleItem {
-  value: string;
-  label: string;
-  icon: ReactElement;
+  value: string,
+  label: string,
+  icon: ReactElement
 }
 
-const settings: ToggleItem[] = [
-  {
-    value: "bold",
-    label: "Font bold",
-    icon: <FontBoldIcon />,
-  },
-  {
-    value: "italic",
-    label: "Font italic",
-    icon: <FontItalicIcon />,
-  },
-  {
-    value: "underline",
-    label: "Underline",
-    icon: <UnderlineIcon />,
-  },
-];
+interface ToggleItems {
+  items: ToggleItem[]
+}
 
-interface Props {}
-
-const ToggleGroup = (props: Props) => {
+const ToggleGroup = ({items}: ToggleItems) => {
   return (
     <ToggleGroupPrimitive.Root type="multiple" aria-label="Font settings">
-      {settings.map(({ value, label, icon }, i) => (
+      {items.map(({ value, label, icon }, i) => (
         <ToggleGroupPrimitive.Item
           key={`group-item-${value}-${label}`}
           value={value}

@@ -3,14 +3,17 @@ import cx from "classnames";
 import React from "react";
 import Button from "./shared/Button";
 
-interface Props {}
+interface Props {
+  trigger: string,
+  description: string
+}
 
-const Tooltip = (props: Props) => {
+const Tooltip = ({ trigger, description }: Props) => {
   return (
     <TooltipPrimitive.Provider>
       <TooltipPrimitive.Root>
         <TooltipPrimitive.Trigger asChild>
-          <Button>Hover</Button>
+          <Button>{ trigger }</Button>
         </TooltipPrimitive.Trigger>
         <TooltipPrimitive.Content
           sideOffset={4}
@@ -25,7 +28,7 @@ const Tooltip = (props: Props) => {
         >
           <TooltipPrimitive.Arrow className="fill-current text-white dark:text-gray-800" />
           <span className="block text-xs leading-none text-gray-700 dark:text-gray-100">
-            Sorry, but our princess is in another castle
+            { description }
           </span>
         </TooltipPrimitive.Content>
       </TooltipPrimitive.Root>

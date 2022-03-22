@@ -3,31 +3,34 @@ import { ChevronDownIcon } from "@radix-ui/react-icons";
 import cx from "classnames";
 import React from "react";
 
+
+// const items: AccordionItem[] = [
+  //   {
+    //     header: "What is Radix UI?",
+    //     content:
+    //       "Radix Primitives is a low-level UI component library with a focus on accessibility, customization and developer experience. You can use these components either as the base layer of your design system, or adopt them incrementally.",
+    //   },
+    //   {
+      //     header:
+      //       "Each primitive can be installed individually so you we adopt them incrementally?",
+      //     content: "Yes!",
+      //   },
+      //   {
+        //     header: "Is it accessible?",
+        //     content: "Yes!",
+        //   },
+        // ];
+        
 interface AccordionItem {
   header: string;
   content: string;
 }
 
-const items: AccordionItem[] = [
-  {
-    header: "What is Radix UI?",
-    content:
-      "Radix Primitives is a low-level UI component library with a focus on accessibility, customization and developer experience. You can use these components either as the base layer of your design system, or adopt them incrementally.",
-  },
-  {
-    header:
-      "Each primitive can be installed individually so you we adopt them incrementally?",
-    content: "Yes!",
-  },
-  {
-    header: "Is it accessible?",
-    content: "Yes!",
-  },
-];
+interface Items {
+  items: AccordionItem[]
+}
 
-interface Props {}
-
-const Accordion = (props: Props) => {
+const Accordion = ({items}: Items) => {
   return (
     <AccordionPrimitive.Root
       type="single"

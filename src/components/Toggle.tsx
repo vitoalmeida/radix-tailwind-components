@@ -3,24 +3,26 @@ import * as TogglePrimitive from "@radix-ui/react-toggle";
 import React, { useState } from "react";
 import Button from "./shared/Button";
 
-interface Props {}
+interface Props {
+  text: string
+}
 
-const Toggle = (props: Props) => {
-  const [starred, setStarred] = useState(false);
+const Toggle = ({ text }: Props) => {
+  const [toggleState, setToggleState] = useState(false);
 
   return (
     <TogglePrimitive.Root
-      defaultPressed={starred}
-      onPressedChange={setStarred}
+      defaultPressed={toggleState}
+      onPressedChange={setToggleState}
       asChild
     >
       <Button>
-        {starred ? (
+        {toggleState ? (
           <StarFilledIcon className="h-4 w-4 text-yellow-400" />
         ) : (
-          <StarIcon />
+          { text }
         )}
-        <span className="ml-2 leading-5">{starred ? "Starred" : "Star"}</span>
+        <span className="ml-2 leading-5">{toggleState ? "Starred" : "Star"}</span>
       </Button>
     </TogglePrimitive.Root>
   );

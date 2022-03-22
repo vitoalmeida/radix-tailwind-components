@@ -5,15 +5,22 @@ import cx from "classnames";
 import React, { Fragment, useState } from "react";
 import Button from "./shared/Button";
 
-interface Props {}
+interface Props {
+  trigger: string,
+  title: string,
+  description: string,
+  firstInputText: string,
+  secondInputText: string,
+  confirmButtonText: string
+}
 
-const Dialog = (props: Props) => {
+const Dialog = ({ trigger, title, description, firstInputText, secondInputText, confirmButtonText }: Props) => {
   let [isOpen, setIsOpen] = useState(false);
 
   return (
     <DialogPrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
       <DialogPrimitive.Trigger asChild>
-        <Button>Click</Button>
+        <Button>{ trigger }</Button>
       </DialogPrimitive.Trigger>
       <Transition.Root show={isOpen}>
         <Transition.Child
@@ -50,11 +57,10 @@ const Dialog = (props: Props) => {
             )}
           >
             <DialogPrimitive.Title className="text-sm font-medium text-gray-900 dark:text-gray-100">
-              Edit profile
+              { title }
             </DialogPrimitive.Title>
             <DialogPrimitive.Description className="mt-2 text-sm font-normal text-gray-700 dark:text-gray-400">
-              Make changes to your profile here. Click save when you&apos;re
-              done.
+              { description }
             </DialogPrimitive.Description>
             <form className="mt-2 space-y-2">
               <fieldset>
@@ -63,13 +69,11 @@ const Dialog = (props: Props) => {
                   htmlFor="firstName"
                   className="text-xs font-medium text-gray-700 dark:text-gray-400"
                 >
-                  First Name
+                  { firstInputText }
                 </label>
                 <input
                   id="firstName"
                   type="text"
-                  placeholder="Tim"
-                  autoComplete="given-name"
                   className={cx(
                     "mt-1 block w-full rounded-md",
                     "text-sm text-gray-700 placeholder:text-gray-500 dark:text-gray-400 dark:placeholder:text-gray-600",
@@ -83,13 +87,11 @@ const Dialog = (props: Props) => {
                   htmlFor="familyName"
                   className="text-xs font-medium text-gray-700 dark:text-gray-400"
                 >
-                  Family Name
+                  { secondInputText }
                 </label>
                 <input
                   id="familyName"
                   type="text"
-                  placeholder="Cook"
-                  autoComplete="family-name"
                   className={cx(
                     "mt-1 block w-full rounded-md",
                     "text-sm text-gray-700 placeholder:text-gray-500 dark:text-gray-400 dark:placeholder:text-gray-600",
@@ -109,7 +111,7 @@ const Dialog = (props: Props) => {
                   "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                 )}
               >
-                Save
+                { confirmButtonText }
               </DialogPrimitive.Close>
             </div>
 

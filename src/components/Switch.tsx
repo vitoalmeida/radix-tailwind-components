@@ -2,9 +2,7 @@ import * as SwitchPrimitive from "@radix-ui/react-switch";
 import cx from "classnames";
 import React from "react";
 
-interface Props {}
-
-const Switch = (props: Props) => {
+const Switch = () => {
   return (
     <SwitchPrimitive.Root
       className={cx(

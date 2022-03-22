@@ -3,9 +3,11 @@ import { PlayIcon, Share2Icon, TriangleRightIcon } from "@radix-ui/react-icons";
 import cx from "classnames";
 import React from "react";
 
-interface Props {}
-
-const Collapsible = (props: Props) => {
+interface Props {
+  trigger: string
+}
+// !!!!! need correction
+const Collapsible = ({trigger}: Props) => {
   const [isOpen, setIsOpen] = React.useState(true);
 
   return (
@@ -17,7 +19,7 @@ const Collapsible = (props: Props) => {
           "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         )}
       >
-        <div>My Playlists</div>
+        <div>{trigger}</div>
         <TriangleRightIcon className="transform duration-300 ease-in-out group-radix-state-open:rotate-90" />
       </CollapsiblePrimitive.Trigger>
       <CollapsiblePrimitive.Content className="mt-4 flex flex-col space-y-4">

@@ -7,25 +7,11 @@ interface Tab {
   value: string;
 }
 
-const tabs: Tab[] = [
-  {
-    title: "Inbox",
-    value: "tab1",
-  },
-  {
-    title: "Today",
-    value: "tab2",
-  },
+interface Tabs {
+  tabs: Tab[]
+}
 
-  {
-    title: "Upcoming",
-    value: "tab3",
-  },
-];
-
-interface Props {}
-
-const Tabs = (props: Props) => {
+const Tabs = ({tabs}: Tabs) => {
   return (
     <TabsPrimitive.Root defaultValue="tab1">
       <TabsPrimitive.List
@@ -63,15 +49,6 @@ const Tabs = (props: Props) => {
           value={value}
           className={cx("rounded-b-lg bg-white px-6 py-4 dark:bg-gray-800")}
         >
-          <span className="text-sm text-gray-700 dark:text-gray-100">
-            {
-              {
-                tab1: "Your inbox is empty",
-                tab2: "Make some coffee",
-                tab3: "Order more coffee",
-              }[value]
-            }
-          </span>
         </TabsPrimitive.Content>
       ))}
     </TabsPrimitive.Root>

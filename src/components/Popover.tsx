@@ -4,37 +4,25 @@ import cx from "classnames";
 import React from "react";
 import Button from "./shared/Button";
 
-interface Props {}
+interface Item {
+  id?: string,
+  label: string,
+  defaultValue: string
+}
 
-const items = [
-  {
-    id: "width",
-    label: "Width",
-    defaultValue: "100%",
-  },
-  {
-    id: "max-width",
-    label: "Max. width",
-    defaultValue: "300px",
-  },
-  {
-    id: "height",
-    label: "Height",
-    defaultValue: "25px",
-  },
-  {
-    id: "max-height",
-    label: "Max. height",
-    defaultValue: "none",
-  },
-];
+interface Props {
+  items: Item[],
+  trigger: string,
+  title: string
+}
 
-const Popover = (props: Props) => {
+
+const Popover = ({items, title, trigger}: Props) => {
   return (
     <div className="relative inline-block text-left">
       <PopoverPrimitive.Root>
         <PopoverPrimitive.Trigger asChild>
-          <Button>Click</Button>
+          <Button>{ trigger }</Button>
         </PopoverPrimitive.Trigger>
         <PopoverPrimitive.Content
           align="center"
@@ -47,7 +35,7 @@ const Popover = (props: Props) => {
         >
           <PopoverPrimitive.Arrow className="fill-current text-white dark:text-gray-800" />
           <h3 className="text-sm font-medium text-gray-900 dark:text-gray-100">
-            Dimensions
+            { title }
           </h3>
 
           <form className="mt-4 space-y-2">

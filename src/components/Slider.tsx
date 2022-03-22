@@ -2,9 +2,7 @@ import * as SliderPrimitive from "@radix-ui/react-slider";
 import cx from "classnames";
 import React from "react";
 
-interface Props {}
-
-const Slider = (props: Props) => {
+const Slider = () => {
   return (
     <SliderPrimitive.Root
       defaultValue={[50]}
